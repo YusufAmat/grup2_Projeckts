@@ -149,14 +149,5 @@ public class IfStatement {
         if (temp>=70 & temp<=80){
             System.out.println("Ideal Temp");
         }
-
-
-        //Task
-
-
-
-
-
-    }
     }
 }
