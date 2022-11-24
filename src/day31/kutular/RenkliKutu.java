@@ -1,15 +1,16 @@
 package day31.kutular;
 
 public class RenkliKutu extends Kutu{
-    private String renk;
 
+    private String renk;
 
     public RenkliKutu() {
     }
 
     public RenkliKutu(int genislik, int derinlik, int yukseklik, String renk) {
-        super(genislik, derinlik, yukseklik);
+        super(genislik,derinlik,yukseklik);
         this.renk = renk;
+
     }
 
     public String getRenk() {
@@ -22,6 +23,7 @@ public class RenkliKutu extends Kutu{
 
     @Override
     public String toString() {
-        return String.format("Renkli Kutu : [ %s %d x %d x %d ]", renk,getGenislik(),getDerinlik(),getYukseklik()) ;
+        return String.format("Renkli Kutu : [ %s %d x %d x %d ]",
+                renk,getGenislik(),getDerinlik(),getYukseklik());
     }
 }

@@ -1,18 +1,19 @@
 package day31.kutular;
 
 public class Kutu {
-    private int genislik;
-    private int derinlik;
-    private int yukseklik;
+    private int genislik=1;
+    private int derinlik=1;
+    private int yukseklik=1;
+
 
     public Kutu() {
-        this (1,1,1);
+        this(1,1,1);
     }
 
     public Kutu(int genislik, int derinlik, int yukseklik) {
         setGenislik(genislik);
-        setDerinlik(derinlik);
-        setYukseklik(yukseklik);
+        this.derinlik = derinlik;
+        this.yukseklik = yukseklik;
     }
 
     public int getGenislik() {
@@ -20,11 +21,8 @@ public class Kutu {
     }
 
     public void setGenislik(int genislik) {
-        if (genislik>0) {
-            this.genislik = genislik;
-        }else {
-            this.genislik=1;
-        }
+        if(genislik<1) return;
+        this.genislik=genislik;
     }
 
     public int getDerinlik() {
@@ -32,12 +30,11 @@ public class Kutu {
     }
 
     public void setDerinlik(int derinlik) {
-        if (derinlik>0) {
+        if(derinlik>0) {
             this.derinlik = derinlik;
         }else {
             this.derinlik=1;
         }
-
     }
 
     public int getYukseklik() {
@@ -45,20 +42,19 @@ public class Kutu {
     }
 
     public void setYukseklik(int yukseklik) {
-        if (yukseklik>0) {
+        if(yukseklik>0) {
             this.yukseklik = yukseklik;
         }else {
             this.yukseklik=1;
         }
-
     }
 
     public int getHacim(){
-        return genislik*yukseklik*derinlik;
+        return genislik*derinlik*yukseklik;
     }
 
     @Override
     public String toString() {
-        return String.format("Kutu : [ %d x %d x %d ]", genislik, derinlik, yukseklik);
+        return String.format("Kutu : [ %d x %d x %d ]",genislik,derinlik,yukseklik);
     }
 }
